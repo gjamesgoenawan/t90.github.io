@@ -46,7 +46,7 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 90%;
+    max-width: min(90%, 1500px);
     margin-top: 20px;
     background: #2a2a2a;
     border-radius: 16px;
@@ -55,7 +55,7 @@
   }
 
   thead {
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background: #2d2d2d;
   }
 
   th, td {
@@ -75,7 +75,7 @@
 
   th:hover {
     background: rgba(255,255,255,0.08);
-    color: #ffeb3b; /* playful yellow */
+    color: #dfa3ff; /* playful yellow */
   }
 
   tbody tr {
@@ -84,7 +84,6 @@
 
   tbody tr:hover {
     background: rgba(255,255,255,0.05);
-    transform: scale(1.02);
   }
 
   td {

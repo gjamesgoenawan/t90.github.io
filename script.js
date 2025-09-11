@@ -68,11 +68,11 @@ function updateSortIndicators() {
   document.querySelectorAll("#data-table th").forEach(th => {
     const col = th.dataset.col;
     const asc = sortState[col];
-    const base = th.textContent.replace(/[\u25B2\u25BC]/g, "");
+    const base = th.textContent.replace(/[↑\↓]/g, "");
     if (asc === undefined) {
       th.textContent = base;
     } else {
-      th.textContent = asc ? `${base} ▲` : `${base} ▼`;
+      th.textContent = asc ? `${base} ↑` : `${base} ↓`;
     }
   });
 }
@@ -99,13 +99,20 @@ function loadWeek(path) {
 function renderTable(rows) {
   const tbody = document.querySelector("#data-table tbody");
   tbody.innerHTML = "";
+  
   rows.forEach(row => {
     const memberInfo = members[row.id] || {};
     const displayName = memberInfo.name || row.id; // fallback to ID
     const newTag = row.new ? `<sup style="color:red;font-weight:bold;"> NEW</sup>` : "";
 
+    // Fun background color for top 3.
+    let bgColor = "";
+    if (row.rank === 1) bgColor = "#5d4f03ff"; 
+    else if (row.rank === 2) bgColor = "#565656ff";
+    else if (row.rank === 3) bgColor = "#583512ff";
+
     tbody.innerHTML += `
-      <tr>
+      <tr style="background-color: ${bgColor};">
         <td>${formatNumber(row.rank)}</td>
         <td style="text-align: left;">${displayName}${newTag}</td>
         <td>${formatNumber(row.power)}</td>
