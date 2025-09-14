@@ -61,7 +61,10 @@ function renderStats(weekNum) {
     card.className = "stat-card";
     card.innerHTML = `
       <div class="stat-title">${title}</div>
-      <div class="stat-value">${mean} ± ${std}</div>
+      <div class="stat-value">
+        <div>${mean}</div>
+        <div style="font-size: 0.6em; color: gray;">± ${std}</div>
+      </div>
     `;
     container.appendChild(card);
   });
