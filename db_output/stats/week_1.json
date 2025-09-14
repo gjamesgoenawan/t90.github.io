@@ -699,38 +699,8 @@
     "rank": 70,
     "new": false
   },
-  "207576943": {
-    "power": 8033952,
-    "power_increase": 0,
-    "help": 0,
-    "tech": 0,
-    "build": 0,
-    "scores": "-",
-    "rank": "-",
-    "new": true
-  },
-  "207606581": {
-    "power": 17605567,
-    "power_increase": 0,
-    "help": 0,
-    "tech": 0,
-    "build": 0,
-    "scores": "-",
-    "rank": "-",
-    "new": true
-  },
-  "207989344": {
-    "power": 6676532,
-    "power_increase": 0,
-    "help": 0,
-    "tech": 0,
-    "build": 0,
-    "scores": "-",
-    "rank": "-",
-    "new": true
-  },
-  "207660420": {
-    "power": 5777829,
+  "207660728": {
+    "power": 4901401,
     "power_increase": 0,
     "help": 0,
     "tech": 0,
@@ -749,16 +719,6 @@
     "rank": "-",
     "new": true
   },
-  "207660728": {
-    "power": 4901401,
-    "power_increase": 0,
-    "help": 0,
-    "tech": 0,
-    "build": 0,
-    "scores": "-",
-    "rank": "-",
-    "new": true
-  },
   "207610709": {
     "power": 4937886,
     "power_increase": 0,
@@ -769,18 +729,18 @@
     "rank": "-",
     "new": true
   },
-  "207576060": {
-    "power": 4662169,
+  "207989344": {
+    "power": 6676532,
     "power_increase": 0,
-    "help": 996,
+    "help": 0,
     "tech": 0,
-    "build": 1790,
+    "build": 0,
     "scores": "-",
     "rank": "-",
     "new": true
   },
-  "207577602": {
-    "power": 4368800,
+  "207606581": {
+    "power": 17605567,
     "power_increase": 0,
     "help": 0,
     "tech": 0,
@@ -799,8 +759,48 @@
     "rank": "-",
     "new": true
   },
+  "207597055": {
+    "power": 4783077,
+    "power_increase": 0,
+    "help": 0,
+    "tech": 0,
+    "build": 0,
+    "scores": "-",
+    "rank": "-",
+    "new": true
+  },
+  "207577602": {
+    "power": 4368800,
+    "power_increase": 0,
+    "help": 0,
+    "tech": 0,
+    "build": 0,
+    "scores": "-",
+    "rank": "-",
+    "new": true
+  },
+  "207576943": {
+    "power": 8033952,
+    "power_increase": 0,
+    "help": 0,
+    "tech": 0,
+    "build": 0,
+    "scores": "-",
+    "rank": "-",
+    "new": true
+  },
   "207587877": {
     "power": 6951995,
+    "power_increase": 0,
+    "help": 0,
+    "tech": 0,
+    "build": 0,
+    "scores": "-",
+    "rank": "-",
+    "new": true
+  },
+  "207660420": {
+    "power": 5777829,
     "power_increase": 0,
     "help": 0,
     "tech": 0,
@@ -819,18 +819,18 @@
     "rank": "-",
     "new": true
   },
-  "207578281": {
-    "power": 5917010,
+  "207576060": {
+    "power": 4662169,
     "power_increase": 0,
-    "help": 0,
+    "help": 996,
     "tech": 0,
-    "build": 0,
+    "build": 1790,
     "scores": "-",
     "rank": "-",
     "new": true
   },
-  "207597055": {
-    "power": 4783077,
+  "207578281": {
+    "power": 5917010,
     "power_increase": 0,
     "help": 0,
     "tech": 0,
