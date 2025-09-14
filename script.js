@@ -1,38 +1,71 @@
 let data = [];
 let members = {};
 let sortState = {};
+let allianceStats = {};
 const weekSelect = document.getElementById("week-select");
-
-const TOTAL_WEEKS = 3;
 
 Promise.all([
   fetch("db_output/members.json").then(res => res.json()),
-  fetch("db_output/weeks.json").then(res => res.json())
+  fetch("db_output/weeks.json").then(res => res.json()),
+  fetch("db_output/alliance_stats.json").then(res => res.json())
 ])
-.then(([membersJson, weeksJson]) => {
+.then(([membersJson, weeksJson, allianceStatsJson]) => {
   members = membersJson;
   weeks = weeksJson;
-
-  const weekKeys = Object.keys(weeks).map(Number); // ensure numeric keys
+  allianceStats = allianceStatsJson;
+  const weekKeys = Object.keys(weeks).map(Number);
   for (let i = weekKeys.length - 1; i >= 0; i--) {
     const weekInfo = weeks[i];
     const dateStr = `${weekInfo.date}/${weekInfo.month}/${weekInfo.year}`;
     
     const opt = document.createElement("option");
-    opt.value = `db_output/stats/week_${i}.json`;
+    opt.value = i; // store week number directly!
     opt.textContent = `Week ${i} - ${dateStr}`;
     weekSelect.appendChild(opt);
   }
   
-  // Default to first option (latest week)
+  // Default: latest week
   weekSelect.selectedIndex = 0;
-  loadWeek(weekSelect.value);
+  const weekNum = weekSelect.value;
+  loadWeek(`db_output/stats/week_${weekNum}.json`);
+  renderStats(weekNum);
 });
 
 // Handle dropdown change
 weekSelect.addEventListener("change", () => {
-  loadWeek(weekSelect.value);
+  const weekNum = weekSelect.value;
+  loadWeek(`db_output/stats/week_${weekNum}.json`);
+  renderStats(weekNum);
 });
+
+// Render Stats Cards
+function renderStats(weekNum) {
+  const container = document.getElementById("stats-container");
+  container.innerHTML = "";
+
+  const stats = allianceStats[weekNum] || {};
+  const labels = {
+    average_power: "Average Power",
+    average_power_increase: "Average Δ Power",
+    average_help: "Average Help",
+    average_tech: "Average Tech",
+    average_build: "Average Build"
+  };
+  console.log(weekNum)
+  Object.entries(labels).forEach(([key, title]) => {
+    const arr = stats[key] || [0, 0];
+    const mean = formatNumber(arr[0]);
+    const std = formatNumber(arr[1]);
+
+    const card = document.createElement("div");
+    card.className = "stat-card";
+    card.innerHTML = `
+      <div class="stat-title">${title}</div>
+      <div class="stat-value">${mean} ± ${std}</div>
+    `;
+    container.appendChild(card);
+  });
+}
 
 function formatNumber(val) {
   if (val === "-" || val === null || val === undefined) {

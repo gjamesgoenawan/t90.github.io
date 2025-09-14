@@ -111,6 +111,43 @@
     th:nth-child(6), td:nth-child(6),
     th:nth-child(7), td:nth-child(7)
     th:nth-child(8), td:nth-child(8) { width: 13%; }
+  
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: min(90%, 1500px);
+      margin-top: 20px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #2e2e2e, #3b3b3b);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .stat-card:hover {
+      transform: scale(1.05);
+    }
+
+    .stat-title {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
   </style>
 </head>
 <body>
@@ -118,6 +155,8 @@
 
   <label for="week-select">Select Week: </label>
   <select id="week-select"></select>
+
+  <div id="stats-container" class="stats-grid"></div>
 
   <table id="data-table">
     <thead>

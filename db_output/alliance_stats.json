@@ -1,0 +1,68 @@
+{
+  "0": {
+    "average_power": [
+      5999917,
+      4023899
+    ],
+    "average_power_increase": [
+      0,
+      0
+    ],
+    "average_help": [
+      0,
+      0
+    ],
+    "average_tech": [
+      0,
+      0
+    ],
+    "average_build": [
+      0,
+      0
+    ]
+  },
+  "1": {
+    "average_power": [
+      7450915,
+      4427547
+    ],
+    "average_power_increase": [
+      1526386,
+      896270
+    ],
+    "average_help": [
+      1161,
+      720
+    ],
+    "average_tech": [
+      65711,
+      20495
+    ],
+    "average_build": [
+      31363,
+      31545
+    ]
+  },
+  "2": {
+    "average_power": [
+      8291430,
+      4740931
+    ],
+    "average_power_increase": [
+      1108388,
+      698590
+    ],
+    "average_help": [
+      1199,
+      770
+    ],
+    "average_tech": [
+      67736,
+      7918
+    ],
+    "average_build": [
+      32440,
+      29264
+    ]
+  }
+}
